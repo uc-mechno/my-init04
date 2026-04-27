@@ -1,98 +1,45 @@
+# my-init04
 
+JavaScript 開発環境のテンプレートプロジェクトです。ESLint と Prettier を使ったコード品質管理の設定が含まれています。
 
-# 🧹 Code Quality Setup
+## 技術スタック
 
-このプロジェクトでは、コード品質とフォーマットを統一するために以下を使用しています：
+- **言語**: JavaScript (ESM)
+- **Linter**: ESLint v10
+- **Formatter**: Prettier v3
 
-- ESLint（コード品質チェック）
-- Prettier（コード整形）
+## プロジェクト構成
 
+```
+my-init04/
+├── project/
+│   ├── index.html   # メイン HTML ファイル
+│   └── main.js      # メイン JavaScript ファイル
+├── eslint.config.js # ESLint 設定
+├── package.json
+└── README.md
+```
 
----
-
-## 📦 セットアップ
+## セットアップ
 
 ```bash
 npm install
 ```
 
----
+## 使用可能なスクリプト
 
-## 🚀 使用コマンド
+| コマンド | 説明 |
+|---|---|
+| `npm run format` | コードを自動フォーマット |
+| `npm run format:check` | フォーマットのチェックのみ（書き換えなし） |
+| `npm run lint` | ESLint によるコードチェック |
+| `npm run lint:fix` | ESLint による自動修正 |
 
-### ESLint
+## ESLint ルール
 
-```bash
-npm run lint
-```
-
-コードの問題をチェックします。
-
-```bash
-npm run lint:fix
-```
-
-自動修正できるものを修正します。
-
----
-
-### Prettier
-
-```bash
-npm run format
-```
-
-全ファイルを整形します。
-
-```bash
-npm run format:check
-```
-
-整形されていないファイルをチェックします。
-
----
-
-## 🧠 自動実行（重要）
-
-現在、自動実行（lint-staged / Husky）は使用していません。
-
-コミット時の自動チェックは行われず、手動で実行します：
-
-- ESLint：`npm run lint`
-- Prettier：`npm run format`
-
----
-
-## 🔧 設定ルール（ESLint）
-
-主なルール：
-
-- 未使用変数 → 警告（`_`付きは無視）
-- `==` 禁止 → `===` 強制
-- `var` 禁止 → `let / const`
-- 再代入なし → `const 推奨`
-- `console.log` → 許可
-- Prettier違反 → エラー
-
----
-
-### ② コミットが止まる場合
-
-👉 ESLintエラーです（仕様です）
-
-```bash
-npm run lint:fix
-```
-
-で修正してください
-
----
-
-## 🧩 推奨エディタ設定（VSCode）
-
-```json
-{
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
-}
-```
+- `no-unused-vars`: 未使用変数を警告（`_` で始まる引数は除外）
+- `no-console`: `console.log` の使用を許可
+- `eqeqeq`: `===` のみ使用を強制（`==` 禁止）
+- `no-var`: `var` の使用を禁止（`let` / `const` を使用）
+- `prefer-const`: 再代入しない変数は `const` を推奨
+- `prettier/prettier`: Prettier フォーマット違反をエラーとして検出
