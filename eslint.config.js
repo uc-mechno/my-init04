@@ -31,7 +31,7 @@ export default [
       'no-var': 'error', // varの使用を禁止（let / constを強制）
       'prefer-const': 'warn', // 再代入しない変数はconstを使うよう促す
       'prettier/prettier': 'error', // Prettierのフォーマット違反をエラーとして検出
+      'no-undef': 'off', // 未定義変数の参照チェックを無効化（jQuery などの外部グローバルのため）
     },
-    'no-undef': 'off', // 未定義変数の参照チェックを無効化（jQuery などの外部グローバルのため）
   },
 ];
