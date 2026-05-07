@@ -1,0 +1,19 @@
+{
+  // ========================
+  // ✨ フォーマッタの設定
+  // ========================
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit" //保存時のみeslintの自動修正を実行する
+  },
+  "eslint.validate": ["javascript"], // ESLintをJavaScriptファイルに適用
+  "[javascript]": {
+    "editor.formatOnSave": true, // javascriptファイルは保存時にフォーマットする
+    "editor.defaultFormatter": "esbenp.prettier-vscode" // prettierを指定
+  },
+  // ========================
+  // ✨ 拡張機能: prettier
+  // ========================
+  "prettier.ignorePath": ".prettierignore", // 除外ファイルのパス
+  "prettier.prettierPath": "./node_modules/prettier" // prettierのパス
+}
